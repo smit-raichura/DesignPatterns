@@ -22,10 +22,10 @@ if __name__ == "__main__":
     dataTransformer = DataTransformer(XMLToJSONStrategy())
     json_result = dataTransformer.transform(xml_data)
     print("XML to JSON:")
-    print(json.dumps(json_result, indent=4))
+    print(json.dumps(json.loads(json_result), indent=4))
 
     # Switching to CSV to JSON strategy
     dataTransformer.set_strategy(CSVToJSONStrategy())
     json_result = dataTransformer.transform(csv_data)
     print("\nCSV to JSON:")
-    print(json_result)
+    print(json.dumps(json.loads(json_result), indent=4))
